@@ -1,3 +1,5 @@
+import chalk from "chalk";
+
 const products = [
     { produto: 'Oleo', preco: 15, qtd: 2 },
     { produto: 'Gas', preco: 180, qtd: 1 },
@@ -16,14 +18,14 @@ const addProduto = (produto, qtd) => {
             achado = true
             let valor = qtd * item.preco
             carrinho.push({ nome: produto, quantidade: qtd, total: valor });
-            console.log(`${produto} adicionado ao carrinho com sucesso`);
+            console.log(chalk.green(`${produto} adicionado ao carrinho com sucesso`));
 
         }
 
     })
 
     if (!achado) {
-        console.log('Produto nao encontrado');
+        console.log(chalk.red('Produto nao encontrado'));
 
     }
 }
@@ -32,24 +34,24 @@ const removerItem = (produto) => {
     let index = carrinho.findIndex((i) => i.nome === produto)
     if (index !== -1) {
         carrinho.splice(index, 1)
-        console.log(`${produto} removido com sucesso`);
+        console.log(chalk.green(`${produto} removido com sucesso`));
 
     } else {
-        console.log('Produto nao encontrado');
+        console.log(chalk.red('Produto nao encontrado'));
 
     }
 }
 
 const totalCarrinho = () => {
     let total = carrinho.reduce((acum, som) => acum + som.total, 0);
-    console.log(`O valor total do carrinho é de R$${total.toFixed(2)}`);
+    console.log(chalk.blue(`O valor total do carrinho é de R$${total.toFixed(2)}`));
 
 }
 
 const limparCarrinho = () => {
     let tamanho = carrinho.length
     carrinho.splice(0, tamanho)
-    console.log('Compra finalizada');
+    console.log(chalk.gray('Compra finalizada'));
 
 }
 

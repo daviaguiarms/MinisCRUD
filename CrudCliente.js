@@ -1,12 +1,16 @@
+import chalk from "chalk"
+
 const clientes = []
 
 const addCliente = (nome, idade) => {
     clientes.push({ nome: nome, idade: idade })
+    console.log(chalk.green('Clientes adicionados com sucesso'));
+    
 }
 
 const listClientes = () => {
     clientes.forEach((cli) => {
-        console.log(`Cliente: ${cli.nome} - Idade: ${cli.idade}`);
+        console.log(chalk.blue(`Cliente: ${cli.nome} - Idade: ${cli.idade}`));
 
     })
 }
@@ -17,13 +21,13 @@ const updateCliente = (nome, newIdade) => {
         if (nome === cliente.nome) {
             existe = true
             cliente.idade = newIdade
-            console.log(`Idade do ${cliente.nome} atualizada com sucesso`);
+            console.log(chalk.green(`Idade do ${cliente.nome} atualizada com sucesso`));
 
         }
     })
 
     if (!existe) {
-        console.log('Esse cliente nao existe');
+        console.log(chalk.red('Esse cliente nao existe'));
 
     }
 }
@@ -32,10 +36,10 @@ const removeCliente = (nome) => {
     let index = clientes.findIndex((i) => i.nome === nome)
     if (index !== -1) {
         clientes.splice(index, 1)
-        console.log(`Cliente removido com sucesso`);
+        console.log(chalk.green(`Cliente removido com sucesso`));
 
     } else {
-        console.log('Cliente não encontrado');
+        console.log(chalk.red('Cliente não encontrado'));
 
     }
 }

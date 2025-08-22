@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "chalk": "^5.6.0"
+  },
+  "name": "minicrud",
+  "version": "1.0.0",
+  "main": "CrudCarrinho.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviaguiarms/MinisCRUD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daviaguiarms/MinisCRUD/issues"
+  },
+  "homepage": "https://github.com/daviaguiarms/MinisCRUD#readme",
+  "description": ""
+}
