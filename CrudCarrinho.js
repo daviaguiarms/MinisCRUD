@@ -41,7 +41,7 @@ const removerItem = (produto) => {
 }
 
 const totalCarrinho = () => {
-    let total = carrinho.reduce((acum, som) => acum + som.total, 0)
+    let total = carrinho.reduce((acum, som) => acum + som.total, 0);
     console.log(`O valor total do carrinho é de R$${total.toFixed(2)}`);
 
 }
