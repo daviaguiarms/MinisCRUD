@@ -12,7 +12,7 @@ const addTarefa = (id, description, concluida) => {
 }
 
 const removerTarefa = (id) => {
-    let index = tarefas.findIndex((e) => e.id === id)
+    let index = tarefas.findIndex((e) => e.id === id);
     if (index !== -1) {
         tarefas.splice(index, 1)
         console.log(chalk.green('Tarefa removida com sucesso'));
